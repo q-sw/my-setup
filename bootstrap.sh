@@ -8,7 +8,7 @@ set -x
 function install_homebrew() {
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-	 Finalize homebrew installation
+	# Finalize homebrew installation
 	echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/quentin_local/.zprofile
 	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/quentin_local/.zprofile
 	eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -18,7 +18,8 @@ function install_homebrew() {
 function install_devops_tools(){
 	DEVOPS_TOOLS=('go' 'terraform' 'docker' 'minikube' 'awscli' 'ansible'\
 		      'terragrun' 'terraform-docs' 'tmux' 'virtualenv'\
-	      	      '--cask visual-studio-code' '--cask google-cloud-sdk' )
+	      	      '--cask visual-studio-code' '--cask google-cloud-sdk'\
+								'--cask drawio' )
 
 	for dt in "${DEVOPS_TOOLS[@]}"; do
 		brew install $dt
@@ -30,8 +31,8 @@ function install_devops_tools(){
 
 # Install productivity tools
 function install_productivity_tools(){
-	PRODUCTIVITY_TOOLS=('clipy' 'google-chrome' 'microsoft-teams'\
-			  'microsoft-outlook' 'microsoft-powerpoint'\
+	PRODUCTIVITY_TOOLS=('clipy' 'google-chrome' 'adobe-acrobat-reader' 'microsoft-teams'\
+			  'spectacle' 'microsoft-outlook' 'microsoft-powerpoint'\
 			  'microsoft-work' 'microsoft-excel')
 
 	for pt in "${PRODUCTIVITY_TOOLS[@]}"; do
