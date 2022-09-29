@@ -23,6 +23,8 @@ function install_devops_tools(){
 	for dt in "${DEVOPS_TOOLS[@]}"; do
 		brew install $dt
 	done
+
+	minikube completion zsh > ~/.minikube-completion
 }
 
 
