@@ -19,7 +19,7 @@ function install_devops_tools(){
 	DEVOPS_TOOLS=('go' 'terraform' 'docker' 'minikube' 'awscli' 'ansible'\
 		      			'terragrun' 'terraform-docs' 'tmux' 'virtualenv'\
 	      	  		'--cask visual-studio-code' '--cask google-cloud-sdk'\
-								'--cask drawio' )
+								'--cask drawio' 'packer' )
 
 	for dt in "${DEVOPS_TOOLS[@]}"; do
 		brew install $dt
