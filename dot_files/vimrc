@@ -1,0 +1,62 @@
+set ttyfast
+set showmode
+set showcmd
+set title
+set number
+set relativenumber
+set hidden
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set incsearch
+set hlsearch
+set mouse=a
+set termwinsize=12x0
+set colorcolumn=80
+syntax on
+
+inoremap jk <Esc>
+map <C-C> :w !pbcopy<CR>
+let mapleader = "-"
+"lightline configuration
+set laststatus=2
+if !has('gui_running')
+    set t_Co=256
+endif
+
+set t_Co=256
+set list
+set listchars=tab:→\ ,trail:·,nbsp:·
+colorscheme monokai
+"Vundle configuration
+set nocompatible
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'https://github.com/airblade/vim-gitgutter.git'
+Plugin 'preservim/nerdtree'
+Plugin 'vimwiki/vimwiki'
+Plugin 'https://tpope.io/vim/fugitive.git'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'sheerun/vim-polyglot'
+call vundle#end()
+filetype plugin indent on
+
+"Configuration for GitGutter
+set updatetime=100
+"split move configuration
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+"Nerdtree Mapping
+nnoremap <C-n> :NERDTree<CR>
+let NERDTreeQuitOnOpen=1
+"Vimwiki Mapping
+let g:vimwiki_list = [{'path': '~/Workspace/02_Notes',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
