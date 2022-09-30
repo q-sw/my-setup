@@ -69,6 +69,7 @@ function setup_tmux() {
 	#plugin manager
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	ln -s $(pwd)/dot_files/tmux.conf ~/.tmux.conf
+	~/.tmux/plugins/tpm/bin/install_plugin
 }
 
 function main(){
