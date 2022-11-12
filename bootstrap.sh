@@ -31,9 +31,9 @@ function install_devops_tools(){
 
 # Install productivity tools
 function install_productivity_tools(){
-	PRODUCTIVITY_TOOLS=('clipy' 'google-chrome' 'adobe-acrobat-reader' 'microsoft-teams'\
+	PRODUCTIVITY_TOOLS=('clipy' 'google-chrome' 'google-drive' 'adobe-acrobat-reader' 'microsoft-teams'\
 			  'spectacle' 'keepassxc' 'microsoft-outlook' 'microsoft-powerpoint'\
-			  'microsoft-work' 'microsoft-excel')
+			  'microsoft-work' 'microsoft-excel' 'zoom')
 
 	for pt in "${PRODUCTIVITY_TOOLS[@]}"; do
 		brew install --cask $pt
@@ -70,6 +70,11 @@ function setup_tmux() {
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	ln -s $(pwd)/dot_files/tmux.conf ~/.tmux.conf
 	~/.tmux/plugins/tpm/bin/install_plugin
+}
+
+function other_tools(){
+	BREW_OTHER_TOOLS=('vlc' 'spotify' )
+
 }
 
 function main(){
